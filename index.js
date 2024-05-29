@@ -1,11 +1,6 @@
-const express = require('express');
-const app = express();
-const PORT = process.env.PORT || 3000;
+const app = require('./app.js')
+const port = process.env.PORT || 8080;
 
-app.get('/', (req, res) => {
-    res.send('AM ISRAEL HAI!');    
-});
-
-app.listen(PORT, () =>{
-    console.log(`App is running on port ${PORT}`);
+app.listen(port, () =>{
+    console.log(`App is running on port ${port}`);
 });
