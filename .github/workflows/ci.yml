@@ -21,12 +21,8 @@ jobs:
       - name: Run test
         run: npm test
 
-      # - name: Build Docker image
-      #   if: success()
-      #   run: docker build -t nodejs-docker-ci-cd .
-
       - name: Log in to Docker Hub
-        if: success() && github.event_name == 'push'
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
@@ -34,6 +30,7 @@ jobs:
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
+        if: success()
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: oryaaharoni/nodejs-docker-ci-cd
@@ -43,6 +40,7 @@ jobs:
       #   run: docker build -t nodejs-docker-ci-cd .
 
       - name: Build and push Docker image
+        if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           context: .
