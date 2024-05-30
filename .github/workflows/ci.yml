@@ -21,9 +21,9 @@ jobs:
       - name: Run test
         run: npm test
 
-      - name: Build Docker image
-        if: success()
-        run: docker build -t nodejs-docker-ci-cd .
+      # - name: Build Docker image
+      #   if: success()
+      #   run: docker build -t nodejs-docker-ci-cd .
 
       - name: Log in to Docker Hub
         if: success() && github.event_name == 'push'
@@ -31,3 +31,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+      - name: Build Docker image
+        if: success()
+        run: docker build -t nodejs-docker-ci-cd .
