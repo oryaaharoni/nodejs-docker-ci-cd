@@ -2,18 +2,19 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: ['master']
+      # - main
   pull_request:
-    branches:
-      - main
-    types: [opened, synchronize, reopened]
-  paths:
-    - 'application/**'
-    - 'Dockerfile'
+    branches: ['master']
+      # - main
+    # types: [opened, synchronize, reopened]
+  # paths:
+  #   - 'application/**'
+  #   - 'Dockerfile'
 
 jobs:
   build:
+    name: build and update app
     runs-on: ubuntu-latest
 
     steps:
