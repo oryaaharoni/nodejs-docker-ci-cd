@@ -7,13 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node
+      - name: Check out the repo
+        uses: actions/checkout@v3
 
+      - name: Use Node
         uses: actions/setup-node@v3
         with:
           node-version: 16  #20
+
       - name: Install dependencies
         run: npm install
+        
       - name: Run test
         run: npm test
