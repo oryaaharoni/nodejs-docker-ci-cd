@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out the repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Use Node
@@ -17,6 +17,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        
+
       - name: Run test
         run: npm test
+
+      - name: Build Docker image
+        if: success()
+        run: docker build -t nodejs-docker-ci-cd .
