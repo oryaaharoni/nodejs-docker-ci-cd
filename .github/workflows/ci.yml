@@ -7,10 +7,10 @@ on:
   pull_request:
     branches: ['master']
       # - main
-    # types: [opened, synchronize, reopened]
-  # paths:
-  #   - 'application/**'
-  #   - 'Dockerfile'
+    types: [opened, synchronize, reopened]
+  paths:
+    - 'application/**'
+    - 'Dockerfile'
 
 jobs:
   build:
