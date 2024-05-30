@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12, 14, 16]
 
     steps:
       - name: Checkout repository
@@ -20,7 +23,7 @@ jobs:
       - name: Use Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16  #20
+          node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: npm install
@@ -42,10 +45,6 @@ jobs:
         with:
           images: oryaaharoni/nodejs-docker-ci-cd
 
-      # - name: Build Docker image
-      #   if: success()
-      #   run: docker build -t nodejs-docker-ci-cd .
-
       - name: Build and push Docker image
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
@@ -61,5 +60,5 @@ jobs:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     
     steps:
-    - name: Deploying to platform...
+    - name: Deploy
       run: echo "Deploying to platform..."
