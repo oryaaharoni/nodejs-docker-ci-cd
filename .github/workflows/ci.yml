@@ -43,7 +43,7 @@ jobs:
         if: success()
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: oryaaharoni/nodejs-docker-ci-cd
+          images: ${{ secrets.DOCKER_HUB_USERNAME }}/nodejs-docker-ci-cd
 
       - name: Build and push Docker image
         if: success() && github.event_name == 'push' && github.ref == 'refs/heads/main'
