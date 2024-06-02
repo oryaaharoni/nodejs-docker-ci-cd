@@ -11,22 +11,22 @@ This repository demonstrates a basic __Node.js application__ configured with __D
 
 ## getting started
 ### prerequisites
--_Node.js_<br>
--_Docker, Docker Hub account_<br>
--_GitHub account_
+- _Node.js_
+- _Docker, Docker Hub account_
+- _GitHub account_
 
 ### Installation
 * [ ] Clone the repository:
 git clone https://github.com/oryaaharoni/nodejs-docker-ci-cd.git .<br>
 cd nodejs-docker-ci-cd
 
-* [ ] Install dependencies:
+* [x] Install dependencies:
 npm install
 
-* [ ] Build the Docker image:
+* [x] Build the Docker image:
 docker build -t nodejs-docker-ci-cd .
 
-* [ ] Run the Docker container:
+* [x] Run the Docker container:
 docker run -p 8080:8080 nodejs-docker-ci-cd
 
 ### GitHub Actions
@@ -37,7 +37,7 @@ The repository includes GitHub Actions workflows located in the `.github/workflo
 
 ### CI/CD Pipeline
 The ci.yaml file defines a workflow that runs on push events to the main branch and pull request events on main. <br>
-It performs the following steps:<br>
+It performs the following steps:
 - Checks out the code from the repository.
 - Sets up the desired Node.js version.
 - Installs dependencies for the Node.js application.
@@ -49,9 +49,9 @@ Before pushing your code to the main branch:
 - Create a public repository on Docker Hub.
 - Configure the DOCKER_HUB_USERNAME and DOCKER_HUB_PASSWORD secrets in your GitHub repository settings. This secrets is required to push the Docker image to your Docker Hub account.
 
-##Project Structure
+## Project Structure
 **- `.github/workflows`:** CI/CD pipeline configurations.
-**-`Dockerfile`:** Instructions for building a Docker image for the application.
-**-`index.js`:** The main application file for the Node.js server.
-**-`test`:** Directory containing test cases.
-**-`package.json`:** Dependencies and scripts.
+**- `Dockerfile`:** Instructions for building a Docker image for the application.
+**- `index.js`:** The main application file for the Node.js server.
+**- `test`:** Directory containing test cases.
+**- `package.json`:** Dependencies and scripts.
