@@ -1,21 +1,21 @@
 # nodejs-docker-ci-cd
 
-##overview
+## overview
 
 This repository demonstrates a basic __Node.js application__ configured with __Docker__ and a __CI/CD pipeline__ using __GitHub Actions__. It serves as an example of how to set up continuous integration and deployment for Node.js applications in a containerized environment.
 
-##features
+## features
 -Node.js Application: A simple Node.js app to demonstrate the setup.
 -Docker Support: Dockerfile for containerizing the application.
 -CI/CD Pipeline: GitHub Actions workflows for automated building, testing, and deployment.
 
-##getting started
-###prerequisites
+## getting started
+### prerequisites
 -_Node.js_
 -_Docker, Docker Hub account_
 -_GitHub account_
 
-###Installation
+### Installation
 [ ]Clone the repository:
 git clone https://github.com/oryaaharoni/nodejs-docker-ci-cd.git .
 cd nodejs-docker-ci-cd
@@ -26,13 +26,13 @@ docker build -t nodejs-docker-ci-cd .
 [ ]Run the Docker container:
 docker run -p 8080:8080 nodejs-docker-ci-cd
 
-###GitHub Actions
+### GitHub Actions
 The repository includes GitHub Actions workflows located in the `.github/workflows` directory. These workflows automate the following tasks:
 **-Build:** Build the Node.js application and Docker image.
 **-Test:** Run the tests to ensure the application works as expected.
 **-Deploy:** Deploy the Docker container to a specified environment.
 
-###CI/CD Pipeline
+### CI/CD Pipeline
 The ci.yaml file defines a workflow that runs on push events to the main branch and pull request events on main. 
 It performs the following steps:
 -Checks out the code from the repository.
