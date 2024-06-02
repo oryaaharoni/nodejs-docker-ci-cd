@@ -16,17 +16,17 @@ This repository demonstrates a basic __Node.js application__ configured with __D
 - _GitHub account_
 
 ### Installation
-* [x] Clone the repository:
+* [x] Clone the repository:<br>
 git clone https://github.com/oryaaharoni/nodejs-docker-ci-cd.git .<br>
 cd nodejs-docker-ci-cd
 
-* [x] Install dependencies:
+* [x] Install dependencies:<br>
 npm install
 
-* [x] Build the Docker image:
+* [x] Build the Docker image:<br>
 docker build -t nodejs-docker-ci-cd .
 
-* [x] Run the Docker container:
+* [x] Run the Docker container:<br>
 docker run -p 8080:8080 nodejs-docker-ci-cd
 
 ### GitHub Actions
