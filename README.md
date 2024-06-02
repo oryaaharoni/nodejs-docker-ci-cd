@@ -30,10 +30,10 @@ docker build -t nodejs-docker-ci-cd .
 docker run -p 8080:8080 nodejs-docker-ci-cd
 
 ### GitHub Actions
-The repository includes GitHub Actions workflows located in the `.github/workflows` directory. These workflows automate the following tasks:<br>
-**- Build:**  Build the Node.js application and Docker image.<br>
-**- Test:**  Run the tests to ensure the application works as expected.<br>
-**- Deploy:**  Deploy the Docker container to a specified environment.<br>
+The repository includes GitHub Actions workflows located in the `.github/workflows` directory. These workflows automate the following tasks:
+- **Build:**  Build the Node.js application and Docker image.
+- **Test:**  Run the tests to ensure the application works as expected.
+- **Deploy:**  Deploy the Docker container to a specified environment.
 
 ### CI/CD Pipeline
 The ci.yaml file defines a workflow that runs on push events to the main branch and pull request events on main. <br>
