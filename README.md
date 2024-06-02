@@ -5,8 +5,8 @@
 This repository demonstrates a basic __Node.js application__ configured with __Docker__ and a __CI/CD pipeline__ using __GitHub Actions__. It serves as an example of how to set up continuous integration and deployment for Node.js applications in a containerized environment.
 
 ## features
--Node.js Application: A simple Node.js app to demonstrate the setup.
--Docker Support: Dockerfile for containerizing the application.
+-Node.js Application: A simple Node.js app to demonstrate the setup.<br>
+-Docker Support: Dockerfile for containerizing the application.<br>
 -CI/CD Pipeline: GitHub Actions workflows for automated building, testing, and deployment.
 
 ## getting started
